@@ -24,13 +24,13 @@ public class FootballSetGame extends Game {
 		                game.notifyManager();
 		            }
 		        }, 
-		        5000 
+		        5000
 		);
 	}
 
 	@Override
 	public String getResults() {
-		if( isFinished ) {
+		if( !isFinished ) {
 			throw new GameNotFinishedYetException();
 		}
 		return teamA + " " + scoreA + ":" + scoreB + " " + teamB;
