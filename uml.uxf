@@ -168,7 +168,7 @@ Sender
 +setId(Integer id)
 +setManager(GameManager gameManager)
 #notifyManager()
-/+getResults():String // Throws unchecked GameNotFinishedYetException/
+/+getResults():String/
 --
 -gameManager: GameManager</panel_attributes>
     <additional_attributes/>
