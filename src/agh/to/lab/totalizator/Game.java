@@ -29,7 +29,7 @@ abstract public class Game {
 			throw new GameNotFinishedYetException();
 		}
 		if( manager != null ) {
-			manager.gameStateChanged(this);
+			manager.gameStateChanged(id);
 		}
 	}
 }
