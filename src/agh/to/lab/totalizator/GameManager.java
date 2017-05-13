@@ -2,9 +2,7 @@ package agh.to.lab.totalizator;
 
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 public class GameManager {
 	private static int nextGameId = 1;
@@ -25,7 +23,7 @@ public class GameManager {
 		nextGameId++;
 		game.setManager(this);
 		games.put(game.getId(), game);
-		subscriptionManager.subscribers.put(game.getId(), new HashSet<>());
+		subscriptionManager.addGameId(game.getId());
 	}
 	
 	public void gameStateChanged(Integer gameId) {

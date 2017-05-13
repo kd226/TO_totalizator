@@ -1,11 +1,12 @@
 package agh.to.lab.totalizator;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
 public class SubscriptionManager {
-    protected Map<Integer, Set<Integer>> subscribers;
+    private Map<Integer, Set<Integer>> subscribers;
     private CommunicationManager communicationManager;
 
     public SubscriptionManager(CommunicationManager communicationManager) {
@@ -25,7 +26,12 @@ public class SubscriptionManager {
     }
 
     public void sendResult(Integer gameId, String result) {
-        subscribers.get(gameId).forEach(userId -> communicationManager.send(userId, result));
+        subscribers.get(gameId).forEach(
+        		userId -> communicationManager.send(userId, result));
+    }
+    
+    void addGameId(Integer gameId) {
+    	subscribers.put(gameId, new HashSet<Integer>());
     }
 
 }
